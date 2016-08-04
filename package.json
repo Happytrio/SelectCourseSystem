@@ -1,0 +1,20 @@
+{
+  "name": "SelectCourseSystem",
+  "version": "1.0.0",
+  "description": "This is for study gulp and angular project !",
+  "homepage": "https://github.com/Happytrio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Happytrio/SelectCourseSystem"
+  },
+  "author": {
+    "name": "Happytrio",
+    "email": "971070489@qq.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-uglify": "^1.5.3"
+  }
+}
