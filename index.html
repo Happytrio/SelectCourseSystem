@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title>SelectCourseSystem</title>
+		<link rel="stylesheet" href="framework/lib/bootstrap.min.css" />
+		<script src="framework/lib/angular.min.js"></script>
+		<script src="framework/lib/angular-route.min.js"></script>
+		<script src="framework/js/ngRoute.js"></script>
+		<script src="framework/js/main.js"></script>
+		<script src="framework/js/lessonList.js"></script>
+		<script src="framework/js/slideBar.js"></script>
+	</head>
+	<body>
+		<div id="less_box" class="container" ng-controller="IndexController">
+			<div class="row">
+				<h1 class="text-center">自制Angular课程表</h1>
+				<div class="col-md-2" ng-controller="NavSlidebar">
+					<h3>课程导航</h3>
+					<ul class="nav nav-pills nav-stacked">
+						<li role="presentation"><a ng-click="changeUrl('/main/')">我的课表</a></li>
+						<li role="presentation"><a ng-click="changeUrl('/lessonList/')">全部课程</a></li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

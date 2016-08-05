@@ -1,0 +1,19 @@
+<div class="lessonTab" ng-controller="LessonTab">
+	<h3>课程详细列表</h3>
+	<table class="table table-striped">
+		<tr>
+			<th class="text-center">编号</th>
+			<th class="text-center">科目</th>
+			<th class="text-center">老师</th>
+			<th class="text-center">人数</th>
+			<th class="text-center">时间</th>
+		</tr>
+		<tr ng-repeat="lesson in lessons">
+			<td>{{lesson.num}}</td>
+			<td>{{lesson.lesson}}</td>
+			<td>{{lesson.teacher}}</td>
+			<td>{{lesson.people}}</td>
+			<td>{{lesson.time}}</td>
+		</tr>
+	</table>
+</div>
