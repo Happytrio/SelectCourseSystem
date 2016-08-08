@@ -6,6 +6,6 @@ myapp.config(['$routeProvider',
 			templateUrl: './html/main.html'
 		}).when('/lessonList', {
 			templateUrl: './html/lessonList.html'
-		}).otherwise({redirectTo:'/main/'})
+		}).otherwise({redirectTo:'/main'})
 	}
-]);
+]); 
