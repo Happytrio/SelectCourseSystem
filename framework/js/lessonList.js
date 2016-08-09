@@ -10,6 +10,7 @@ angular.module('myapp').controller('LessonTab',['$rootScope','$scope','BaseServi
 		$scope.handleShow = function(){
 			var e = e || window.event;
 			var left = 0,top = 0;
+			var course = {};
 			
 			left = e.clientX;
 			top = e.clientY;
@@ -19,11 +20,9 @@ angular.module('myapp').controller('LessonTab',['$rootScope','$scope','BaseServi
 			$scope.lessonTeacher = this.lesson.teacher;
 			$scope.getTime = this.lesson.time;
 			$scope.handleIsShow = true;
-			console.log(BaseService);
-			
 		};
 		$scope.addLesson = function(){
-			BaseService.getLessonData($scope.getTime);
+			BaseService.getLessonData($scope.getTime,$scope.lessonName);
 		};
 		$scope.closeHandle = function(){
 			$scope.handleIsShow = false;

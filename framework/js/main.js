@@ -1,4 +1,4 @@
-myapp.controller('IndexController',['$scope',
+myapp.controller('mainController',['$scope',
 	function($scope){
 		
 	}
