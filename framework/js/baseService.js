@@ -6,6 +6,9 @@ angular.module('myapp')
     	[],
     	[],
     	[],
+    	[],
+    	[],
+    	[],
     	[]
     ],
     init:function(){
@@ -14,18 +17,19 @@ angular.module('myapp')
     trim:function(datas){
     	return datas.replace(/(^\s*)|(\s$)/g,'');
     },
-    getLessonData:function(courseTime,courseName){
+    getLessonData:function(courseTime,courseName,courseTeacher){
     	var that = this;
     	var newData = that.trim(courseTime).split(',');
     	newData.forEach(function(d){
     		var newDatas = that.trim(d).split('-')[0];
 	  		var timeData = that.trim(newDatas).split(' ');
-  			var day = that.charToNumber(timeData[0]);
-  			var dayLesson = timeData[1];
+  			var day = that.charToNumber(timeData[0]) ;
+  			var dayLesson = Number.parseInt(timeData[1]);
 			
-			that.user[day][dayLesson]='1';
-			console.log(that.user);			
+				that.user[dayLesson-1][day] = courseName;
+				that.user[dayLesson][day] = courseTeacher;
     	});
+    	console.log(that.user);
     },
     charToNumber:function(char){
     	var num;

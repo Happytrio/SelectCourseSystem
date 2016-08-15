@@ -7,7 +7,12 @@ angular.module('myapp').controller('LessonTab',['$rootScope','$scope','BaseServi
 			{num:1,lesson:'高等数学四',teacher:'王老师',people:48,time:'一 1-2 , 五 3-4'},
 			{num:1,lesson:'高等数学一',teacher:'赵老师',people:60,time:'二 3-4 , 四 1-2'}
 		];
-		$scope.handleShow = function(){
+		
+		$scope.handleShow = handleShow;
+		$scope.addLesson = addLesson;
+		$scope.closeHandle = closeHandle;
+		
+		function handleShow(){
 			var e = e || window.event;
 			var left = 0,top = 0;
 			var course = {};
@@ -15,18 +20,17 @@ angular.module('myapp').controller('LessonTab',['$rootScope','$scope','BaseServi
 			left = e.clientX;
 			top = e.clientY;
 			$scope.handlePos = 'left:'+left+'px;top:'+top+'px';
-//			console.log(this.lesson);
 			$scope.lessonName = this.lesson.lesson;
 			$scope.lessonTeacher = this.lesson.teacher;
 			$scope.getTime = this.lesson.time;
 			$scope.handleIsShow = true;
 		};
-		$scope.addLesson = function(){
-			BaseService.getLessonData($scope.getTime,$scope.lessonName);
-		};
-		$scope.closeHandle = function(){
+		function addLesson(){
+			BaseService.getLessonData($scope.getTime,$scope.lessonName,$scope.lessonTeacher);
 			$scope.handleIsShow = false;
 		};
-	}
-	
+		function closeHandle(){
+			$scope.handleIsShow = false;
+		};
+	}	
 ]);
