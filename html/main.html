@@ -11,19 +11,19 @@
 		</tr>
 		<tr ng-repeat="item in [0,1,2,3,4,5,6,7]">
 			<td>{{item+1}}</td>
-			<td ng-class="{'border':isShow}">
+			<td class="{{tableViewClass[item][1]}}">
 				<p>{{tableView[item][1]}}</p>
 			</td>
-			<td ng-class="{'border':isShow}">
+			<td class="{{tableViewClass[item][2]}}">
 				<p>{{tableView[item][2]}}</p>
 			</td>
-			<td ng-class="{'border':isShow}">
+			<td class="{{tableViewClass[item][3]}}">
 				<p>{{tableView[item][3]}}</p>
 			</td>
-			<td ng-class="{'border':isShow}">
+			<td class="{{tableViewClass[item][4]}}">
 				<p>{{tableView[item][4]}}</p>
 			</td>
-			<td ng-class="{'border':isShow}">
+			<td class="{{tableViewClass[item][5]}}">
 				<p>{{tableView[item][5]}}</p>
 			</td>
 		</tr>

@@ -12,7 +12,7 @@ angular.module('myapp')
     	[]
     ],
     init:function(){
-    	alert(1);
+   
     },
     trim:function(datas){
     	return datas.replace(/(^\s*)|(\s$)/g,'');

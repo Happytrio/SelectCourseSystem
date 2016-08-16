@@ -1,16 +1,14 @@
 myapp.controller('mainController',['$scope','BaseService',
 	function($scope,BaseService){
-		$scope.isShow = false;
+		$scope.tableViewClass = [[],[],[],[],[],[],[],[]];
 		$scope.tableView = BaseService.user;
-		$scope.tableView.forEach(function(a){
-			if(a != ''){
-				a.forEach(function(b){
-					if(b == ''){
-						console.log(1);
-					}
-				});
-			}
+		$scope.tableView.forEach(function(a,indexA){	
+			a.forEach(function(b,indexB){
+				if(b){
+					$scope.tableViewClass[indexA][indexB] = 'ok'
+				}
+			});
+			
 		})
-		$scope.isShow = false;
 	}
 ]);
